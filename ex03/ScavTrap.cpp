@@ -1,5 +1,9 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap() : ClapTrap() {
+
+};
+
 ScavTrap::ScavTrap(std::string name) : ClapTrap("")
 {
 	_name = name;
@@ -15,12 +19,8 @@ ScavTrap::~ScavTrap()
 	std::cout << "NO! the ScavTrap " << _name << " is gone" << std::endl; 
 }
 
-ScavTrap::ScavTrap(const ScavTrap &origin) : ClapTrap("")
+ScavTrap::ScavTrap(const ScavTrap &origin) : ClapTrap(origin)
 {
-	this->_energy = origin._energy;
-	this->_healt = origin._healt;
-	this->_name = origin._name;
-	this->_strengh = origin._strengh;
 	this->_stateGuard = origin._stateGuard;
 	std::cout << "ScavTrap cloning calling now the are a new " << _name << std::endl;
 }
